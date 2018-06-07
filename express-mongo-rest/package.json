@@ -1,0 +1,20 @@
+{
+  "name": "express-mongo-rest",
+  "version": "1.0.0",
+  "description": "rest express server with mongo",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "sujit kirve",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "mongodb": "^2.2.16"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.5"
+  }
+}
