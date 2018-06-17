@@ -1,6 +1,6 @@
 
 const userRoutes = require('./user_routes');
-const questionaryRoutes = require('./questionary_routes');
+//const questionaryRoutes = require('./questionary_routes');
 const positionRoutes = require('./position_routes');
 module.exports= function(app,db){
     userRoutes(app,db);

@@ -21,11 +21,15 @@ module.exports = function(app, db){
         console.log(req.body);
         const jobcode = req.params.jobcode;
         const details = {'jobcode':jobcode};
+
         db.collection('positions').findOne(details,(err, item)=>{
             if(err){
                 res.send({'error':'An error has occured'});
             }
             else{
+
+                db.collection('skills').find().toArray();
+
                 res.send(item);
             }
         });
