@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from '../logo.svg';
 import './App.css';
 import {history} from '../_helpers';
 import {LoginPage} from '../LoginPage';
@@ -9,6 +8,7 @@ import { HomePage } from '../HomePage';
 import {alertActions} from '../_actions';
 import {connect} from 'react-redux';
 import {RegisterPage} from '../RegisterPage';
+import {EvalPage} from '../EvalPage';
 
 class App extends Component {
 
@@ -24,22 +24,21 @@ class App extends Component {
   render() {
     const {alert} = this.props;
     return (
-      <div className="jumbotron">
-        <div className="container">
-            <div>
-                { alert.message &&  
-                  <div className={`alert ${alert.type}`}>{alert.message}</div>
-                }
-            </div>
-            <Router history={history}>
-                <div>
-                    <PrivateRoute exact path="/" component={HomePage}/>
-                    <Route path="/login" component={LoginPage}/>
-                    <Route path="/register" component={RegisterPage}/>
-                </div>
-            </Router>     
-        </div>
-     </div> 
+      <Router history={history}>
+          <div>
+              <div>
+                  { alert.message &&  
+                    <div className={`alert ${alert.type}`}>{alert.message}</div>
+                  }
+              </div>
+              <div>
+                  <PrivateRoute exact path="/" component={HomePage}/>
+                  <PrivateRoute exact path="/eval" component={EvalPage}/>
+                  <Route path="/login" component={LoginPage}/>
+                  <Route path="/register" component={RegisterPage}/>
+              </div>
+          </div>
+      </Router>
     );
   }
 }

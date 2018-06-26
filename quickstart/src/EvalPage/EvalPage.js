@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
 
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 
-class HomePage extends Component {
+class EvalPage extends Component {
     render() {
         const { user } = this.props;
         return (
             <div className="col-md-6 col-md-offset-3">
                 <h1>Hi {user.firstName}!</h1>
-                <p>You're logged in with React!!</p>
+                <p>Start Evaluation</p>
             </div>
         );
     }
@@ -24,5 +23,5 @@ function mapStateToProps(state) {
     };
 }
 
-const connectedHomePage = connect(mapStateToProps)(HomePage);
-export { connectedHomePage as HomePage };
+const connectedEvalPage = connect(mapStateToProps)(EvalPage);
+export { connectedEvalPage as EvalPage };
